@@ -16,6 +16,7 @@ type Props = {
   width?: string; // CSS string for width
   closeIcon?: React.ReactNode;
   shouldCloseOnEsc?: boolean;
+  shouldCloseOnOverlayClick?: boolean;
   hideHeader?: boolean;
   onRequestClose: () => void;
   onAfterOpen?: () => void;
@@ -34,6 +35,7 @@ export function ReactSlidingPane({
   from = "right",
   width,
   shouldCloseOnEsc,
+  shouldCloseOnOverlayClick,
   hideHeader = false,
 }: Props) {
   const directionClass = `slide-pane_from_${from}`;
@@ -49,6 +51,7 @@ export function ReactSlidingPane({
       closeTimeoutMS={CLOSE_TIMEOUT}
       isOpen={isOpen}
       shouldCloseOnEsc={shouldCloseOnEsc}
+      shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
       onAfterOpen={onAfterOpen}
       onRequestClose={onRequestClose}
       contentLabel={`Modal "${title || ""}"`}
