@@ -58,7 +58,7 @@ export function ReactSlidingPane({
     >
       {!hideHeader && (
         <div className="slide-pane__header">
-          <div className="slide-pane__close" onClick={onRequestClose}>
+          <div className="slide-pane__close" onClick={shouldCloseOnOverlayClick !== false && onRequestClose}>
             {closeIcon || <IconClose />}
           </div>
           <div className="slide-pane__title-wrapper">
